@@ -14,11 +14,11 @@
 
 ## **Introduction**
 
-Two weeks ago, Kendrick Lamar headlined the Apple Music Super Bowl LIX Halftime show which took place at the Caesars Superdrome in New Orleans, Louisiana. It is the most watched Super Bowl halftime show, with a TV audience of more than 133.5 million viewers.
+Two weeks ago, Kendrick Lamar headlined the Apple Music Super Bowl LIX Halftime show which took place at the Caesars Superdrome in New Orleans, Louisiana. It is the most watched Super Bowl halftime show, with a [TV audience of more than 133.5 million viewers](https://en.wikipedia.org/wiki/Super_Bowl_LIX_halftime_show).
 
 The Super Bowl halftime show has large cultural influence, can generate viral moments and set trends that spark discussions.
 
-My personal favourite is the Super Bowl LVI halftime show starring Dr. Dre, Snoop Dogg, Eminem, Mary J. Blige and Kendrick Lamar. It is the first Super Bowl halftime show to win the Primetime Emmy Award for Outstanding Variety Special (Live). 
+My personal favourite is the Super Bowl LVI halftime show starring Dr. Dre, Snoop Dogg, Eminem, Mary J. Blige and Kendrick Lamar. It is the first Super Bowl halftime show to win the [Primetime Emmy Award for Outstanding Variety Special (Live)](https://en.wikipedia.org/wiki/Super_Bowl_LVI_halftime_show). 
 
 It also happens to be most viewed Super Bowl halftime show on YouTube with more than 322 million views on the official *NFL* YouTube channel alone... and I’m *pretty sure* I made a *huge* contribution, considering I watched it at least 20 times on repeat.😆 
 
@@ -88,7 +88,7 @@ I used libraries such as **`BeautifulSoup`** and **`requests`** to parse the HTM
     Given the inconsistencies in performer types (eg, band vs solo, headliners and supporting acts) Not all performances may have a clear setlist or song count available. Incomplete data may appear in the dataset as empty or `NaN` values.
     
     - **Omitting incomplete rows**
-    determining the most prolific performers or analyzing song count), you can **remove rows** where critical data (like performer names or song counts) is missing. For instance, if the **"num_songs"** column is empty for a particular performance, removing that row will ensure your analysis focuses only on fully complete data.
+    determining the most prolific performers or analyzing song count, you can **remove rows** where critical data (like performer names or song counts) is missing. For instance, if the **"num_songs"** column is empty for a particular performance, removing that row will ensure your analysis focuses only on fully complete data.
 
         
 
@@ -143,24 +143,24 @@ I used libraries such as **`BeautifulSoup`** and **`requests`** to parse the HTM
 
 I have included 3 notebooks to show my work.
 
-- [Webscraping data](final_project/webscraping_data.ipynb)
-- [Cleaning data](final_project/cleaning_data.ipynb)
-- [Analyzing data](final_project/analyzing_data.ipynb)
+- [Webscraping data](1_Webscraping_data.ipynb)
+- [Cleaning data](2_Cleaning_data.ipynb)
+- [Analyzing data](3_Analyzing_data.ipynb)
 
 Through my analysis I was able answer the following questions:
 
-Who has the most halftime show appearances? see Fig1
-![Fig1](final_project\most_appearances.png)
+Who has the most halftime show appearances? see most_appearances.png
+![Fig1](most_appearances.png)
 
-How many songs are usually performed by each musician in a set? see Fig2
-![Fig2](final_project\songs_per_musician_per_show.png)
+How many songs are usually performed by each musician in a set? see songs_per_musician_per_show.png
+![Fig2](songs_per_musician_per_show.png)
 
-Who has performed the most number of songs? see fig3 &Fig4
-![Fig3](final_project\musician_most_songs.png)
+Who has performed the most number of songs? see musician_most_songs.png & num_songs_performed.html
+![Fig3](musician_most_songs.png)
 
-![Fig4](final_project\num_songs_performed.html)
+Open[Fig4](num_songs_performed.html) in web browser
 
-you can also find these figures in [Analyzing data notebook](final_project/analyzing_data.ipynb)
+you can also find these figures in [Analyzing data notebook](analyzing_data.ipynb)
 
 ---
 
@@ -173,7 +173,7 @@ you can also find these figures in [Analyzing data notebook](final_project/analy
     | Challenge encountered | Solution |
     | --- | --- |
     | 1. When web scraping only the first table in the wiki page was being read into a data frame | with help from my tutor I used list comprehension to process each table and then combine all the separate data frames using `pd.concat()` |
-    | 2. converting to roman numerals | researched useful functions used an example on Stackoverflow and tested it out |
+    | 2. converting to roman numerals | researched useful functions used an example on [Stackoverflow](https://stackoverflow.com/questions/61719161/roman-to-integer-python) and tested it out |
     | 3. after inspecting not all rows were in roman numerals  | use `str.replace()` in Super_Bowl column to make sure all rows are numerals before converting to integers |
     | 4. After removing”show” using `str.replace().` I had lost rows from data frame | I edited my code to include an if statement to ensure that the replacement only applied to rows that actually contain the substring. |
     | 5. Whitespace | Renamed column `Super_Bowl` |
