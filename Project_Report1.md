@@ -46,13 +46,6 @@ Since this dataset is freely available online and updated periodically by the Wi
 
 I used libraries such as **`BeautifulSoup`** and **`requests`** to parse the HTML content of the page, locate all the `wikitable` tables 
 
-The structure is shown below:
-
-| Column | Description | Data type |
-| --- | --- | --- |
-| `'Super_Bowl'` | The Super Bowl number (e.g., 59 for Super Bowl LIX). | Categorical Ordinal |
-| `'Musician'` | The name of the musical act that performed during the halftime show. | Categorical Nominal |
-| `'num_songs'` | The number of songs performed by the musician or group during the halftime show. | Numerical Discrete |
 
 ---
 
@@ -96,16 +89,7 @@ The structure is shown below:
     
     - **Omitting incomplete rows**
     determining the most prolific performers or analyzing song count), you can **remove rows** where critical data (like performer names or song counts) is missing. For instance, if the **"num_songs"** column is empty for a particular performance, removing that row will ensure your analysis focuses only on fully complete data.
-- **Excluding Irrelevant or inconsistent Data**
-    - **Excluding Marching Bands**  when focusing on song count for specific musicians marching bands dont fit the criteria of our analysis
-        
-        Example :
-        
-        ```python
-        # Exclude rows where 'Musician' column indicates a marching band or spirit group
-        excluded_terms = ['Marching Band', 'Spirit', 'Band']
-        df = df[~df['Musician'].str.contains('|'.join(excluded_terms), case=False)]
-        ```
+
         
 
 ---
@@ -133,6 +117,14 @@ The structure is shown below:
     Following that, I filtered `num_songs == 0` to find performers who did not have songs (i.e. Serena Williams) and saved this list of individuals as a separate data frame before removing them from original.
     
     Finally I sorted the data frame by Superbowl number from latest to oldest and renamed `Musician(s)` column to `Musician`.
+    The structure is shown below:
+
+| Column | Description | Data type |
+| --- | --- | --- |
+| `'Super_Bowl'` | The Super Bowl number (e.g., 59 for Super Bowl LIX). | Categorical Ordinal |
+| `'Musician'` | The name of the musical act that performed during the halftime show. | Categorical Nominal |
+| `'num_songs'` | The number of songs performed by the musician or group during the halftime show. | Numerical Discrete |
+
     
 - **Data analysis**
     
@@ -149,22 +141,26 @@ The structure is shown below:
 
 ## **Results**
 
-- include plots and explanations
+I have included 3 notebooks to show my work.
 
-![overview](daz-venv\24-intro-to-data-science\final_project\newplot.png)
+- [Webscraping data](final_project/webscraping_data.ipynb)
+- [Cleaning data](final_project/cleaning_data.ipynb)
+- [Analyzing data](final_project/analyzing_data.ipynb)
 
+Through my analysis I was able answer the following questions:
 
+Who has the most halftime show appearances? see Fig1
+![Fig1](final_project\most_appearances.png)
 
+How many songs are usually performed by each musician in a set? see Fig2
+![Fig2](final_project\songs_per_musician_per_show.png)
 
+Who has performed the most number of songs? see fig3 &Fig4
+![Fig3](final_project\musician_most_songs.png)
 
---- 
+![Fig4](final_project\num_songs_performed.html)
 
-## **Discussion**
-
-- **Findings**: Discuss the key insights and findings derived from the analysis and modeling.
-- **Challenges**: Mention any challenges encountered during the project, such as issues with data quality, model limitations, or computational constraints.
-- **Assumptions**: State any assumptions made during the project and their potential impact on the results.
-- **Business Implications**: Discuss the potential impact of your findings on business or organizational goals. How can these insights be applied in a real-world context?
+you can also find these figures in [Analyzing data notebook](final_project/analyzing_data.ipynb)
 
 ---
 
@@ -191,13 +187,12 @@ The structure is shown below:
     
     I identified before I started cleaning what questions I wanted to answer. So I had a clear understanding of what i wanted my data frame to look like in my head of how I was able to reach from raw data to cleaned file that was useful for  analysing those specific questions. I was able to successfully create a histogram plot and a bubble chart to visualise data.
     
-- **What I Would Do Differently**: If you were to tackle a similar challenge again, based on my experience I would …
 
 ---
 
 ## **Conclusion**
 
-- **Summary of Key Findings**: Summarize the main insights and the outcome of the project.
+- **Summary of Key Findings**: Al Hirt and the non profit organisation Up with People had the most appearances on superbowl halftime show. Most musicians perform 1-4 songs in a performance. Non-band musicians who performed the most songs include the likes of Kendrick Lamar, Usher, Rihanna and Coldplay.
 - **Future Work**:
     
     Next steps for the project I would have loved to have taken a closer look at Superbowl halftime performances from the past 10 years and analyse data around YouTube views demonstrating my data gathering skills using APIs
@@ -205,16 +200,3 @@ The structure is shown below:
 
 ---
 
-## **13. References**
-
-- List any books, articles, research papers, or online resources that you referenced in your report.
-
----
-
-## **14. Appendices (if applicable)**
-
-- **Code**: Include the key code used for data processing, modeling, and analysis, or provide a link to a GitHub repository.
-- **Additional Figures**: Provide any additional charts, graphs, or tables that support the report.
-- **Glossary**: Define any technical terms or abbreviations used in the report.
-
----
