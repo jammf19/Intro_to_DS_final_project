@@ -158,7 +158,7 @@ How many songs are usually performed by each musician in a set? see songs_per_mu
 Who has performed the most number of songs? see musician_most_songs.png & num_songs_performed.html
 ![Fig3](musician_most_songs.png)
 
-Open[Fig4](num_songs_performed.html) in web browser or use this link [](https://rawcdn.githack.com/jammf19/Intro_to_DS_final_project/b5a99f95f3fd985e3c14352bc4a5a39355fde5ac/num_songs_performed.html)
+Open[Fig4](num_songs_performed.html) in web browser or use this [link](https://rawcdn.githack.com/jammf19/Intro_to_DS_final_project/b5a99f95f3fd985e3c14352bc4a5a39355fde5ac/num_songs_performed.html)
 
 you can also find these figures in [Analyzing data notebook](analyzing_data.ipynb)
 
